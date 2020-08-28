@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+          <%= stylesheet_link_tag 'anime', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <section class="hero is-primary is-medium" id="header">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head global-nav" id="js-global-nav">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <h2>
+              <%= link_to 'Portfolio', '/', class: 'navbar-item navbar__logo'%>
+            </h2>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item is-active">
+                <%= link_to 'About', '/about', class: 'navbar-item'%>
+              </div>
+              <div class="navbar-item is-active">
+                <%= link_to "Qiita", "https://qiita.com/hudehisa", :target=>["_blank"] ,class: 'navbar-item'%>
+              </div>
+              <div class="navbar-item">
+                <%= link_to 'Work', '/work', class: 'navbar-item'%>
+              </div> <span class="navbar-item">
+              <div class="button is-primary is-inverted">
+                <span class="icon">
+                <i class="fa fa-envelope fa-1x sns__message"></i>
+                </span>
+              <%= link_to("Contact", "https://docs.google.com/forms/d/e/1FAIpQLSequCZ0-iWUZK8LRn1P2JQ911spkIKtEQtw8uWNKzXOyk0lGw/viewform?usp=sf_link",target: :_blank )%>
+            </div>
+            </span>
+          </div>
+        </div>
+    </div>
+    </nav>
+    </div>
+    <%# <div class="ham" id="ham"> <span class="ham_line ham_line1"></span> <span class="ham_line ham_line2"></span> <span class="ham_line ham_line3"></span> </div> %>
+      <div class="ham" id="ham"><span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span> <span></span> <span></span> </span>
+      </div>
+      <div class="menu_wrapper" id="menu_wrapper">
+        <div class="menu">
+          <ul>
+            <li>
+              <%= link_to("About", "/about")%>
+            </li>
+            <li>
+              <%= link_to("Work", "/work")%>
+            </li>
+            <li>
+              <%= link_to "Qiita", "https://qiita.com/hudehisa", :target=>["_blank"] %>
+            </li>
+            <li>
+              <%= link_to("Contact", "https://docs.google.com/forms/d/e/1FAIpQLSequCZ0-iWUZK8LRn1P2JQ911spkIKtEQtw8uWNKzXOyk0lGw/viewform?usp=sf_link")%>
+            </li>
+          </ul>
+        </div>
+      </div> <a href="#top" id="btn-backtotop"><span class="arrow arrow_up"></span></a>
+      <%= yield %>
+        <div class="white">
+          <div class="sns"> <a class="sns__item hover" href="https://twitter.com/0819_tateishi" target="blank">
+          <i class="fa fa-twitter fa-4x sns__twitter"></i>
+      </a> <a class="sns__item hover" href="https://www.facebook.com/profile.php?id=100052019135608" target="blank">
+          <i class="fa fa-facebook fa-4x sns__facebook"></i>
+      </a> <a class="sns__item hover" href="https://www.linkedin.com/in/ayu-tateishi-0a74891b1/" target="blank">
+          <i class="fa fa-linkedin fa-4x sns__facebook"></i>
+      </a>  </div>
+        </div>
+        <footer class="footer has-background-grey-darker">
+          <div class="footer__items">
+            <p class="footer__logo">Ayu Tateishi Portfolio</p>
+            <p class="footer__copy"><small>&copy;Tateishi Ayu 2020</small></p>
+          </div>
+        </footer>
+        <%= javascript_pack_tag 'common/top_btn' %>
+          <%= javascript_pack_tag 'common/nav' %>
+            <%= javascript_pack_tag 'common/img_load' %>
+              <%= javascript_pack_tag 'common/anime_btn' %>
+                <%= javascript_pack_tag 'common/anime' %>
+</body>
+</html>
